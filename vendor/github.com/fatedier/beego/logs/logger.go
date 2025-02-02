@@ -33,8 +33,7 @@ func newLogWriter(wr io.Writer) *logWriter {
 
 func (lg *logWriter) println(when time.Time, msg string) {
 	lg.Lock()
-	h, _ := formatTimeHeader(when)
-	lg.writer.Write(append(append(h, msg...), '\n'))
+	lg.writer.Write([]byte(msg + "\n"))
 	lg.Unlock()
 }
 
