@@ -291,7 +291,7 @@ func (bl *BeeLogger) writeMsg(logLevel int, msg string, v ...interface{}) error 
 		// set to emergency to ensure all log will be print out correctly
 		logLevel = LevelEmergency
 	} else {
-		msg = levelPrefix[logLevel] + msg
+		msg = "<" + strconv.Itoa(logLevel) + ">" + levelPrefix[logLevel] + msg
 	}
 
 	if bl.asynchronous {
