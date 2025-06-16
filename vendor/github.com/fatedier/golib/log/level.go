@@ -54,13 +54,13 @@ func (l Level) LogPrefix() string {
 	case TraceLevel:
 		return "[T]"
 	case DebugLevel:
-		return "[D]"
+		return "<7>[D]"
 	case InfoLevel:
-		return "[I]"
+		return "<6>[I]"
 	case WarnLevel:
-		return "[W]"
+		return "<4>[W]"
 	case ErrorLevel:
-		return "[E]"
+		return "<3>[E]"
 	default:
 		return ""
 	}
