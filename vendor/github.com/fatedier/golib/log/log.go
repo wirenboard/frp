@@ -131,8 +131,6 @@ func (l *Logger) log(level Level, offset int, msg string, args ...interface{}) {
 	timeHeaderBuf := make([]byte, 23)
 	_, _ = formatTimeHeader(when, timeHeaderBuf)
 
-	buffer.Write(timeHeaderBuf)
-	buffer.WriteByte(' ')
 	buffer.WriteString(level.LogPrefix())
 	buffer.WriteByte(' ')
 
